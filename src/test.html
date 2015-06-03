@@ -1,0 +1,47 @@
+<template>
+
+    <h2>${headingBook}</h2>
+
+  <table class="table">
+
+    <thead>
+    <tr>
+      <th></th>
+      <th>Title </th>
+      <th>Isbn </th>
+      <th>Description </th>
+      <th>Price </th>
+      <th>Authors </th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody >
+    <tr repeat.for="b of books">
+      <td>${b.id}</td>
+      <td>${b.title}</td>
+      <td>${b.isbn}</td>
+      <td>${b.description}</td>
+      <td>${b.price}</td>
+      <td></td>
+      <td>
+        <a class="btn btn-info btn-sm" title="Edit book"   href="#book/${b.id}">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+
+        <button class="btn btn-danger btn-sm" click.trigger="update()">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+
+  <p align="right">
+    <a class="btn btn-success btn-sm" title="Add book"  href="#book" >
+      <span class="glyphicon glyphicon-plus"> </span>Add book </a>
+  </p>
+
+</template>
